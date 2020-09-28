@@ -1,7 +1,7 @@
 # nginx-stream
-```shell
+
 RTMP stream processing server
-```
+
 ## Server installation
 ### Build docker
 ```shell
