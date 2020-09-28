@@ -12,8 +12,10 @@ docker build -t nginx-stream -f Dockerfile-nginx-stream .
 docker run -it -d -p 1935:1935 -v /home/user/ssd/nginx-stream:/workdir:rw nginx-stream
 ```
 
-## Mobile app usage
+## Mobile app settings
 Install app <https://play.google.com/store/apps/details?id=com.spynet.camon&hl=ru>
+
+It is used to stream data from mobile camera to server by RTMP.
 
 Configure live-streaming server:
 ```
