@@ -19,14 +19,16 @@ RUN apt install -y rtmpdump
 RUN mkdir -p /workdir
 WORKDIR /workdir
 COPY nginx.conf /etc/nginx/nginx.conf
-
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 RUN export LC_ALL=C.UTF-8
 RUN export LANG=C.UTF-8
 
 
-RUN service nginx restart
+#RUN service nginx restart
 #CMD ["/bin/bash"]
-CMD ["service", "nginx", "restart"]
-CMD ["/bin/bash"]
+#CMD ["service", "nginx", "restart"]
+#RUN /etc/init.d/nginx restart
 
+#CMD ["/bin/bash"]
+CMD service nginx start

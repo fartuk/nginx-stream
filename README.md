@@ -1,8 +1,27 @@
 # nginx-stream
+```shell
 RTMP stream processing server
-
-## Build docker
+```
+## Server installation
+### Build docker
+```shell
 docker build -t nginx-stream -f Dockerfile-nginx-stream .
+```
+### Run container
+```shell
+docker run -it -d -p 1935:1935 -v /home/user/ssd/nginx-stream:/workdir:rw nginx-stream
+```
 
-## Run container
-docker run --rm -it -p 1935:1935 -v /home/user/ssd/nginx-stream:/workdir:rw nginx-stream
+## Mobile app usage
+Install app <https://play.google.com/store/apps/details?id=com.spynet.camon&hl=ru>
+
+Configure live-streaming server:
+```
+server: rtmp://ip-addres:1935/cam1
+stream: mystream
+```
+
+## Usage
+Open <rtmp://ip-addres:1935/cam1/mystream> in browser or VLC to see live stream.
+
+Video-files will be stored in the [data](data) folder
